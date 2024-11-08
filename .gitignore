@@ -1,0 +1,81 @@
+# ASP.NET Core
+bin/
+obj/
+
+# wwwroot generated files
+wwwroot/lib/
+wwwroot/**/*.map
+wwwroot/**/*.min.css
+wwwroot/**/*.min.js
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+
+# Rider
+.idea/
+
+# Windows specific files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Mac specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux/Mac file system
+**/.Trashes
+**/.fseventsd
+**/.Spotlight-V100
+**/.TemporaryItems
+
+# Logs and databases
+*.log
+*.sqlite
+*.sqlite3
+
+# Compiled files
+*.dll
+*.exe
+*.so
+*.dylib
+*.class
+
+# Packages
+*.nupkg
+*.snupkg
+
+# npm packages
+node_modules/
+yarn.lock
+package-lock.json
+
+# IDE build caches
+*.vs/
+.vscode/
+.idea/
+
+# Environment variables
+.env
+.env.*
+
+# Coverage reports
+coverage/
+*.lcov
+
+# JetBrains Rider
+.idea/
+.idea_modules/
+*.ipr
+*.iws
