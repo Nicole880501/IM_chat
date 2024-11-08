@@ -12,30 +12,27 @@
 </head>
 
 <body>
+    <div class="connection-count text-center mb-1">
+        <p>目前在線人數: <span id="connectionCount">0</span></p>
+    </div>
 
     <div class="chat-container">
-        <h2 class="text-center mb-4">113資管網路聊天室</h2>
-        <div class="connection-count text-center mb-4">
-            <p>目前在線人數: <span id="connectionCount">0</span></p>
-        </div>
-
-
-        <div class="mb-3">
+        <div class="mb-2">
             <label for="userInput" class="form-label">用戶名稱</label>
             <input type="text" class="form-control" id="userInput" placeholder="輸入你的名字" />
         </div>
 
-        <div class="mb-3">
+        <div class="mb-2">
             <label for="messageInput" class="form-label">訊息</label>
             <input type="text" class="form-control" id="messageInput" placeholder="輸入訊息" />
         </div>
 
-        <div class="d-grid mb-3">
+        <div class="d-grid mb-2">
             <button class="btn btn-primary" id="sendButton">發送訊息</button>
         </div>
 
         <div>
-            <h2>聊天室</h2>
+            <h5 class="text-center mb-2">聊天室</h5>
             <ul id="messagesList"></ul>
         </div>
 
