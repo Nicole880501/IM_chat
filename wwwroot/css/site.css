@@ -60,12 +60,11 @@ body {
   /* 使用 Flexbox 排版 */
   flex-direction: column;
   /* 讓內容垂直排列 */
-  gap: 15px;
+  gap: 5px;
   /* 元素間距 */
-  max-height: 90vh;
-  /* 最大高度不超過視窗的 90% */
-  overflow: auto;
-  /* 若內容超過最大高度，顯示滾動條 */
+  /* 最大高度設為 80vh，且容器內不使用滾動 */
+  max-height: 80vh;
+  overflow: hidden;
   margin: auto;
   /* 水平置中 */
 }
@@ -131,6 +130,11 @@ body {
   padding: 10px;
   box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.1);
   /* 設定內部陰影 */
+  max-height: 180px;
+  /* 設定訊息區域最大高度 */
+  overflow-y: auto;
+  /* 設定只有訊息區域可滾動 */
+  margin: 0;
 }
 
 /* 設定每條訊息的樣式 */
