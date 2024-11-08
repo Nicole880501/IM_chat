@@ -16,11 +16,26 @@ connection.on("UpdateConnectionCount", function (count) {
     document.getElementById("connectionCount").textContent = count;
 });
 
+
 connection.on("ReceiveMessage", function (user, message) {
     var li = document.createElement("li");
+
+    // 分辨發送者和接收者的訊息
+    if (user === document.getElementById("userInput").value) {
+        li.classList.add("my-message"); // 使用自定義的樣式類別
+    } else {
+        li.classList.add("other-message"); // 使用另一個樣式類別
+    }
+
+    li.innerHTML = `<strong>${user}</strong>: ${message}`;
     document.getElementById("messagesList").appendChild(li);
-    li.textContent = `${user} says ${message}`;
+
+    // 自動滾動到訊息列表的最底部
+    var messagesList = document.getElementById("messagesList");
+    messagesList.scrollTop = messagesList.scrollHeight;
 });
+
+
 
 connection.start().then(function () {
     document.getElementById("sendButton").disabled = false;
