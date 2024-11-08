@@ -2,15 +2,23 @@
 
 var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 
-//Disable the send button until connection is established.
+// Disable the send button until connection is established.
 document.getElementById("sendButton").disabled = true;
+
+// // 接收伺服器傳來的連線人數更新
+// connection.on("UpdateConnectionCount", function (count) {
+//     document.getElementById("connectionCount").textContent = count;
+// });
+
+// 當收到更新連線人數的事件時，更新顯示的訊息
+connection.on("UpdateConnectionCount", function (count) {
+    // 更新畫面上顯示的人數
+    document.getElementById("connectionCount").textContent = count;
+});
 
 connection.on("ReceiveMessage", function (user, message) {
     var li = document.createElement("li");
     document.getElementById("messagesList").appendChild(li);
-    // We can assign user-supplied strings to an element's textContent because it
-    // is not interpreted as markup. If you're assigning in any other way, you 
-    // should be aware of possible script injection concerns.
     li.textContent = `${user} says ${message}`;
 });
 

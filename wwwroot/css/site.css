@@ -21,9 +21,162 @@ html {
   min-height: 100%;
 }
 
+/* 設定背景顏色 */
 body {
-  margin-bottom: 60px;
+  background: #f0f8f0;
+  /* 使用更深的綠色 */
+  /* 淺綠色背景 */
+  height: 100vh;
+  /* 設定視窗高度 */
+  display: flex;
+  /* 使用 flexbox */
+  justify-content: center;
+  /* 水平置中 */
+  align-items: center;
+  /* 垂直置中 */
+  margin: 0;
+  /* 移除頁面默認邊距 */
+  font-family: Arial, sans-serif;
+  /* 設定字型 */
+  color: #333;
+  /* 設定文字顏色 */
 }
 
 
-/* Original Above */
+/* 聊天室容器樣式 */
+.chat-container {
+  width: 100%;
+  max-width: 500px;
+  /* 設定最大寬度 */
+  background-color: white;
+  /* 白色背景 */
+  padding: 20px;
+  /* 內邊距 */
+  border-radius: 8px;
+  /* 圓角 */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  /* 陰影效果 */
+  display: flex;
+  /* 使用 Flexbox 排版 */
+  flex-direction: column;
+  /* 讓內容垂直排列 */
+  gap: 15px;
+  /* 元素間距 */
+  max-height: 90vh;
+  /* 最大高度不超過視窗的 90% */
+  overflow: auto;
+  /* 若內容超過最大高度，顯示滾動條 */
+  margin: auto;
+  /* 水平置中 */
+}
+
+
+.chat-container h2 {
+  text-align: center;
+  /* 標題文字居中 */
+  font-size: 24px;
+  /* 設定標題字型大小 */
+}
+
+.chat-container .form-label {
+  font-size: 16px;
+  /* 標籤字型大小 */
+}
+
+.chat-container .form-control {
+  padding: 10px;
+  /* 輸入框內部間距 */
+  font-size: 16px;
+  /* 輸入框字型大小 */
+}
+
+.chat-container button {
+  font-size: 16px;
+  /* 按鈕字型大小 */
+  padding: 10px;
+  /* 按鈕內部間距 */
+}
+
+.chat-container ul {
+  list-style-type: none;
+  /* 移除默認的項目符號 */
+  padding: 0;
+}
+
+.chat-container ul li {
+  margin-bottom: 10px;
+  /* 設定列表項目間距 */
+  background-color: #f9f9f9;
+  /* 每條訊息的背景顏色 */
+  padding: 10px;
+  /* 設定訊息內邊距 */
+  border-radius: 5px;
+  /* 設定圓角 */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  /* 設定訊息的陰影 */
+}
+
+/* 設定訊息區域 */
+#messagesList {
+  list-style-type: none;
+  /* 移除默認項目符號 */
+  padding-left: 0;
+  max-height: 300px;
+  /* 設定訊息區域最大高度 */
+  overflow-y: scroll;
+  /* 設定超過部分顯示滾動條 */
+  margin-top: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.1);
+  /* 設定內部陰影 */
+}
+
+/* 設定每條訊息的樣式 */
+#messagesList li {
+  background-color: #e9ecef;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 設定發送者的訊息背景 */
+#messagesList li.my-message {
+  background-color: #d1e7dd;
+  /* 淺綠色背景 */
+  text-align: right;
+}
+
+/* 設定對方的訊息背景 */
+#messagesList li.other-message {
+  background-color: #f8d7da;
+  /* 淺紅色背景 */
+}
+
+/* 設定訊息名稱樣式 */
+#messagesList li span {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* 設定訊息內容樣式 */
+#messagesList li p {
+  display: inline-block;
+  margin: 0;
+}
+
+/* 設定訊息列表滾動條樣式 */
+#messagesList::-webkit-scrollbar {
+  width: 8px;
+}
+
+#messagesList::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+#messagesList::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
