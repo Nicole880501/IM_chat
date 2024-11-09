@@ -1,26 +1,31 @@
 using SignalRChat.Hubs;
+using Microsoft.Azure.SignalR;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// 讀取 Azure SignalR 連接字串
+var azureSignalRConnectionString = builder.Configuration.GetValue<string>("AzureSignalRConnectionString");
+
+// 設定 SignalR 服務
 builder.Services.AddRazorPages();
-builder.Services.AddSignalR();
+builder.Services.AddSignalR()
+    .AddAzureSignalR(options =>
+    {
+        options.ConnectionString = azureSignalRConnectionString;
+    });
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// 設定中介軟體
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
 
 app.MapRazorPages();
